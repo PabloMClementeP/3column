@@ -1,0 +1,172 @@
+/* ## Widths:
+- Mobile: 375px
+- Desktop: 1440px
+
+    Neutral
+
+Transparent white (paragraphs): hsla(0, 0%, 100%, 0.75)
+Very light gray (background, headings, buttons): hsl(0, 0%, 95%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 15px
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root{
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray: hsl(0, 0%, 95%);
+    --dark: #1f1f1f;
+    --font-one: 'Big Shoulders Display', cursive;
+    --font--tow: 'Lexend Deca', sans-serif;
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 15px;
+    background: var(--very-light-gray);
+    font-family: var(--font--tow);
+}
+
+
+.m-t{
+    margin-top: 30px;
+}
+
+/** Main - Cards **/
+
+
+.card-group{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.card{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:nth-child(1){
+    background-color: var(--bright-orange);
+}
+
+.card:nth-child(2){
+    background-color: var(--dark-cyan);
+}
+
+.card:nth-child(3){
+    background-color: var(--very-dark-cyan);
+}
+
+.card-title h2{
+    color: var(--very-light-gray);
+    font-family: var(--font-one);
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.card-text p{
+    color: var(--transparent-white);
+    font-family: var(--font--tow);
+    line-height: 1.5;
+}
+
+.card-btn a{
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    background: var(--very-light-gray);
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all .3s ease-in-out;
+}
+
+.card-group .card:nth-child(1) .card-btn a{
+    color: var(--bright-orange);
+}
+
+
+.card-group .card:nth-child(2) .card-btn a{
+    color: var(--dark-cyan);
+}
+
+
+
+.card-group .card:nth-child(3) .card-btn a{
+    color: var(--very-dark-cyan);
+}
+.card-group .card .card-btn a:hover{
+    border: 2px solid var(--very-light-gray);
+    background: transparent;
+    color: var(--very-light-gray);
+}
+
+
+ /** Footer **/
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+
+/* media queries */
+
+@media screen and (min-width: 800px) {
+
+    body{
+        font-size: 20px;
+    }
+
+    .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .card{
+        gap: 25px;
+    }
+
+    .card-group{
+        grid-template-rows: auto;
+        grid-template-columns: repeat(3,1fr);
+        height: 70vh;
+    }    
+
+    .card-title h2{
+        font-size: 45px;
+    }
+
+    .card-btn{
+        margin-top: 80px;
+    }
+
+    .card-btn a{
+        font-size: 15px;
+        padding: 10px 20px;
+        border-radius: 50px;
+    }
+    
+}
